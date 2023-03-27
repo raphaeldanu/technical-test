@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
     {
         $testAdmin = User::create([
             'name' => "Raphael Adhimas",
-            'username' => 'raphaeldanu',
+            'username' => 'testadmin',
             'password' => Hash::make('12345678'),
         ]);
 
@@ -65,8 +65,6 @@ class DatabaseSeeder extends Seeder
             Genre::create(['name' => $item]);
         }
 
-        $this->run([
-            BookSeeder::class
-        ]);
+        Book::factory()->count(1000)->create();
     }
 }
