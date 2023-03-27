@@ -105,6 +105,32 @@
     {{-- Custom Scripts --}}
     @yield('adminlte_js')
 
+    {{-- Toastr Alert --}}
+    @if (session('success'))
+    <script>
+    var Msg = "<?php echo session('success'); ?>";
+    toastr.success(Msg);
+    </script>
+    @endif
+    @if (session('info'))
+    <script>
+    var Msg = "<?php echo session('info'); ?>";
+    toastr.info(Msg);
+    </script>
+    @endif
+    @if (session('warning'))
+    <script>
+    var Msg = "<?php echo session('warning'); ?>";
+    toastr.warning(Msg);
+    </script>
+    @endif
+    @if (session('danger'))
+    <script>
+    var Msg = "<?php echo session('danger'); ?>";
+    toastr.error(Msg);
+    </script>
+    @endif
+
 </body>
 
 </html>
